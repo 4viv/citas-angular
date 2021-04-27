@@ -1,0 +1,16 @@
+<div *ngIf="listaCitas.length === 0" class="card">
+  <div class="card-body">
+    <h4 class="card-title text-center">No hay citas pendientes</h4>
+  </div>
+</div>
+<div *ngFor="let cita of listaCitas; let i = index" class="card mt-3">
+  <div class="card-body">
+    <p><span>Nombre: </span>{{ cita.nombre }}</p>
+    <p><span>Fecha: </span>{{ cita.fecha }}</p>
+    <p><span>Hora: </span>{{ cita.hora }}</p>
+    <p><span>Sintomas: </span>{{ cita.sintomas }}</p>
+    <button (click)="deleteCita(cita.i)" class="btn btn-danger btn-block">
+      Eliminar
+    </button>
+  </div>
+</div>
